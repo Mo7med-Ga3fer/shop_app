@@ -13,13 +13,11 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(milliseconds: 500),
-      (){
-        GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
-      }
-    );
+    Future.delayed(const Duration(milliseconds: 500), () {
+      GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,21 +28,31 @@ class _SplashViewState extends State<SplashView> {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 16),
-            child: Image.asset('assets/images/cart.png', width: 110, height: 110,),
+            child: Image.asset(
+              'assets/images/cart.png',
+              width: 110,
+              height: 110,
+            ),
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Shop', style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w700,
-                color: Color(0xffFFC107),
-              ),),
-              Text('Mart', style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),),
+              Text(
+                'Shop',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xffFFC107),
+                ),
+              ),
+              Text(
+                'Mart',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         ],
